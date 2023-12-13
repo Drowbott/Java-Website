@@ -1,4 +1,4 @@
-/****************** YOUR NAME: 
+/****************** YOUR NAME: Daniel Rowbottom
 
 The instructions describe the missing logic that is needed; you will translate these into JavaScript in the places indicated.
 
@@ -11,8 +11,8 @@ You are encouraged to use the provided naming convention for ease of review.
 
 // INSERT YOUR CODE HERE
 
-var modelName;
-var duration;
+var modelName = 'XYZ';
+var duration = 0;
 
 
 
@@ -30,21 +30,17 @@ var duration;
 
 function recalculate() {
 
-    var costLabel = document.getElementById('calculated-cost');
-
+    let costLabel = document.getElementById('calculated-cost');
     var newTotalCost;
 
-    if (modelName === 'XYZ') {
+    if (modelName == 'XYZ') {
         newTotalCost = duration * 100;
-    }
-    else if (modelName === 'CPRG') {
+    } 
+    else if (modelName == 'CPRG') {
         newTotalCost = duration * 213;
     }
 
     costLabel.innerHTML = newTotalCost;
-
-   
-    
 
 }
 
@@ -60,26 +56,30 @@ function recalculate() {
     - if modelName is currently "CPRG", change the value of modelName to "XYZ", and change the innerHTML of the model-text span element to "Model XYZ"
     - then, recalculate() the total cost.
 - finally, uncomment the following line of JavaScript to have this function run automatically whenever the pseudo-button is clicked: */
-    // modelButton.addEventListener("click", changeModel);
+    // 
 
 // INSERT YOUR CODE HERE
+
+
 
 var modelButton = document.getElementById('model-button');
 
 function changeModel() {
-    var modelText = document.getElementById('model-text');
+    let modelText = document.getElementById('model-text');
 
-    if (modelName === 'XYZ') {
+    if (modelName == 'XYZ') {
         modelName = 'CPRG';
         modelText.innerHTML = 'Model CPRG';
-    }
-    else if (modelName === 'CRPG') {
+    } 
+    else if(modelName == 'CPRG') {
         modelName = 'XYZ';
         modelText.innerHTML = 'Model XYZ';
     }
+    
     recalculate();
 }
-modelButton.addEventListener('click', changeModel());
+
+modelButton.addEventListener('click', changeModel);
 
 
 
@@ -97,19 +97,19 @@ modelButton.addEventListener('click', changeModel());
 
 // INSERT YOUR CODE HERE
 
-var newDurationButton = document.getElementById('duration-button');
 
-function changeDuration(){
+var durationButton = document.getElementById('duration-button');
+
+function changeDuration() {
     var durationText = document.getElementById('duration-text');
     
     var newDuration = prompt('Enter a new duration: ');
 
-    if (!isNaN(newDuration)) {
-        duration = newDuration;
-        durationText.innerHTML = duration;
-        recalculate();
-    }
-    else alert('Enter a valid number.')
+   
+    duration = newDuration;
+    durationText.innerHTML = duration;
+    recalculate();
+
 }
 
-newDurationButton.addEventListener('click', changeDuration());
+durationButton.addEventListener('click', changeDuration);
