@@ -11,8 +11,8 @@ You are encouraged to use the provided naming convention for ease of review.
 
 // INSERT YOUR CODE HERE
 
-let modelName;
-let duration;
+var modelName;
+var duration;
 
 
 
@@ -30,9 +30,9 @@ let duration;
 
 function recalculate() {
 
-    let costLabel = document.getElementById('calculated-cost');
+    var costLabel = document.getElementById('calculated-cost');
 
-    let newTotalCost;
+    var newTotalCost;
 
     if (modelName === 'XYZ') {
         newTotalCost = duration * 100;
@@ -64,10 +64,10 @@ function recalculate() {
 
 // INSERT YOUR CODE HERE
 
-let modelButton = document.getElementById('model-button');
+var modelButton = document.getElementById('model-button');
 
 function changeModel() {
-    let modelText = document.getElementById('model-text');
+    var modelText = document.getElementById('model-text');
 
     if (modelName === 'XYZ') {
         modelName = 'CPRG';
@@ -97,12 +97,12 @@ modelButton.addEventListener('click', changeModel());
 
 // INSERT YOUR CODE HERE
 
-let newDurationButton = document.getElementById('duration-button');
+var newDurationButton = document.getElementById('duration-button');
 
 function changeDuration(){
-    let durationText = document.getElementById('duration-text');
+    var durationText = document.getElementById('duration-text');
     
-    let newDuration = prompt('Enter a new duration: ');
+    var newDuration = prompt('Enter a new duration: ');
 
     if (!isNaN(newDuration)) {
         duration = newDuration;
